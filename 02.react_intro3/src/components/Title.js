@@ -1,7 +1,9 @@
-const Title = (props) => {
+const Title = ({ content, children }) => {
   return (
     <div className="r_container r_mt-4">
-      <h1 className="r_title">{props.content}</h1>
+      <h1 className="r_title">
+        {content} {children}
+      </h1>
     </div>
   );
 };

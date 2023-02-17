@@ -22,7 +22,7 @@
   margin-top: 20px;
 }
 
-.r_mt-33 {
+.r_mt-3 {
   margin-top: 30px;
 }
 
@@ -44,6 +44,12 @@
 .r_ul {
   list-style: none;
   display: flex;
+}
+
+.r_to_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ul.r_ul li {
@@ -141,4 +147,68 @@ ul.r_ul li {
   border-radius: 50%;
   background-color: #169f1873;
   box-shadow: 2px -2px 4px 2px #00000021;
+}
+
+.r_form_control {
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.648);
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.r_form_control label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 18px;
+  color: goldenrod;
+}
+
+.r_form_control input {
+  display: block;
+  font-size: 18px;
+  color: rgb(46, 34, 5);
+  padding: 10px 8px;
+}
+.r_form_control input:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.r_form_control input:focus-visible {
+  outline-color: darkgoldenrod;
+  color: rgb(177, 152, 91);
+}
+
+.title_cbc h2 {
+  color: crimson;
+  display: flex;
+  align-items: center;
+}
+.title_cbc h2 span {
+  color: #c406dd;
+  border: 2px solid #8a059b;
+  box-shadow: inset 0 0 4px 2px #3f0447;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-left: 8px;
+  line-height: 30px;
+  font-size: 22px;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.title_cbc h2 span::after {
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #ffffff70;
+  border-radius: 50%;
+  top: 6px;
+  left: 5px;
+  box-shadow: 2px 3px 6px 2px white;
+}
+
+.title_cbc p {
+  color: #45094d;
+  font-size: 18px;
 }
