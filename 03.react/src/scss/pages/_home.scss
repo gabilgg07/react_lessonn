@@ -1,0 +1,18 @@
+.header {
+  .user-name {
+    color: $primary-color;
+    margin: 0 5px;
+    border: none;
+    background-color: transparent;
+    text-shadow: 0 0 black;
+    transition: text-shadow 0.3s, transform 0.3s;
+    &:hover {
+      text-shadow: 1px 0px 1px black;
+      transform: scale(1.1);
+    }
+    &:active {
+      text-shadow: 1px 1px 1px black;
+      transform: scale(1.2);
+    }
+  }
+}
