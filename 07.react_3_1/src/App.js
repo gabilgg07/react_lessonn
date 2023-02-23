@@ -14,8 +14,10 @@ function App() {
     let sortedItems = [];
 
     if (btnText) {
+      // boyukden -> kiciye
       sortedItems = items.sort((a, b) => a.votes - b.votes);
     } else {
+      // kicikden -> boyuye
       sortedItems = items.sort((a, b) => b.votes - a.votes);
     }
 
