@@ -18,3 +18,15 @@ a:hover {
 .App {
   margin: 20px 0;
 }
+
+.box-input {
+  position: relative;
+  padding-bottom: 25px;
+}
+
+.box-input .error {
+  color: #c62626;
+  position: absolute;
+  bottom: 0;
+  font-size: 14px;
+}
