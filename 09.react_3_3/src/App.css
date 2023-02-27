@@ -1,0 +1,41 @@
+table caption {
+  caption-side: top;
+  text-align: center;
+}
+.my_card {
+  transition: all 0.4s;
+  overflow: hidden;
+}
+.my_card strong {
+  transition: text-shadow 0.3s, letter-spacing 0.33s;
+}
+.my_card:hover {
+  box-shadow: 0 0 8px 0px #0000004f, 0 0 8px 0px #0000004f;
+  background-color: rgb(231, 231, 231);
+  border-color: transparent;
+}
+.my_card:hover strong {
+  text-shadow: 0px 0px 0px #fffdfdc4, 0px 0px 1px #000000c4,
+    0px 0px 1px #000000c4, 0px 0px 1px #000000c4;
+  letter-spacing: 1px;
+}
+.my_card:active {
+  box-shadow: 0 0 15px 7px #0000004f, 0 0 8px 8px #0000004f;
+  transform: scale(1.01);
+}
+.slow_col {
+  transition: all 0.5s;
+}
+.list-group {
+  transition: all 0.4s;
+  overflow: hidden;
+}
+.my_card .list-group {
+  max-height: 0px;
+  /* display: none; */
+  /* transition: all 1.3s; */
+}
+.my_card.active .list-group {
+  max-height: 1500px;
+  /* display: block; */
+}

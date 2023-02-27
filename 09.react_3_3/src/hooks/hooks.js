@@ -29,10 +29,10 @@ export const useCopyClipboard = (interval = 2000) => {
 export const useMobileDecect = () => {
   const [isMobile, setIsMobile] = useState(false);
 
-  const userAgent = navigator.userAgent;
-  const mobRegex = /android|webos|iphone|ipod|blackberry|iemobile|opera mini/i;
-
   useEffect(() => {
+    const userAgent = navigator.userAgent;
+    const mobRegex =
+      /android|webos|iphone|ipod|blackberry|iemobile|opera mini/i;
     const isMaxWidth768 = window.matchMedia(
       "only screen and (max-width: 768px)"
     ).matches;
