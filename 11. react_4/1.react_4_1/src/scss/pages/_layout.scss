@@ -1,0 +1,113 @@
+#root {
+  background-color: $secondary-color;
+
+  .logo {
+    font-size: 30px;
+    font-weight: 800;
+    font-family: cursive;
+    background-color: $secondary-color;
+    border-radius: 50%;
+    padding: 16px 14px;
+    margin: 2px 16px 2px 0;
+    color: #523f12;
+    box-shadow: 0px 0px 10px 1px #59441f, 0px 0px 15px 4px #3b2f1ac7,
+      0px 0px 20px 4px #382105;
+    border: 3px solid #7c5f1abf;
+    position: relative;
+    transition: all 0.4s;
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #fedb37 0%,
+        #fdb931 8%,
+        #9f7928 30%,
+        #8a6e2f 40%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #ffffff 0%,
+        #ffffac 8%,
+        #d1b464 25%,
+        #5d4a1f 62.5%,
+        #5d4a1f 100%
+      );
+  }
+}
+
+// Header
+
+.logo {
+  .logo-span {
+    font-size: 22px;
+    color: $tertiary-color;
+    position: relative;
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    .logo-span {
+      transform: scale(1.7) translateY(-10%);
+    }
+  }
+
+  &:active {
+    transform: scale(1.07);
+  }
+}
+
+.nav-bar {
+  overflow: hidden;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+
+  .nav-link {
+    transition: text-shadow 0.5s, color 0.5s;
+
+    &:hover {
+      text-shadow: 0px 0px 5px white;
+    }
+  }
+}
+
+.location {
+  background-color: $black-color;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-right: 10px;
+
+      a {
+        transition: text-shadow 0.5s, color 0.5s;
+        color: #ffffff8c;
+
+        &:hover {
+          text-shadow: 0px 0px 5px #a47e26;
+          color: #ffffffbf;
+        }
+      }
+    }
+  }
+}
+
+// Footer
+
+#footer {
+  background-color: $black-color;
+  height: 200px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  margin-top: 2px;
+}
+
+.footer_bottom {
+  background-color: $black-color;
+  padding-bottom: 20px;
+  p.copy {
+    color: $tertiary-color;
+    margin: 0;
+  }
+}

@@ -28,12 +28,21 @@ function App() {
   };
 
   const getPhotoByTerm = async (value, count) => {
+    // bu sekilde de oturmek olur paramslari
+
+    // const { data } = await API.get(
+    //   `search/photos?query=${value}&page=${
+    //     Math.floor(Math.random() * count) + 1
+    //   }`
+    // );
+
     const { data } = await API.get("search/photos", {
       params: {
         query: value,
         page: Math.floor(Math.random() * count) + 1,
       },
     });
+
     console.log(count);
     setPhotos(data.results);
   };
