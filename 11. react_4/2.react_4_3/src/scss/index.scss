@@ -1,0 +1,16 @@
+.navbar {
+  position: absolute !important;
+  width: 100%;
+  z-index: 1;
+  background-color: #000000cc;
+  box-shadow: inset 0px -8px 20px 1px #ffffff1a, inset -1px 4px 20px 1px #000000,
+    inset 0px 6px 20px 1px #000000;
+}
+
+.page {
+  padding-top: 60px;
+}
+
+.custom_card_body {
+  min-height: 315px;
+}
