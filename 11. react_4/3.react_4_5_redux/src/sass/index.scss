@@ -1,0 +1,64 @@
+.shorten_link {
+  .input-group {
+    background-color: #4a4168;
+    padding: 40px;
+    border-radius: 10px;
+    input {
+      padding: 10px;
+      border-radius: 6px !important;
+      margin-right: 15px;
+
+      &:focus,
+      &:focus-visible {
+        border-color: transparent;
+        box-shadow: none;
+      }
+    }
+
+    .invalid-feedback {
+      position: absolute;
+      bottom: 18px;
+      width: auto;
+    }
+  }
+
+  button {
+    background-color: #2cd5d5;
+    border-color: #2cd5d5;
+    color: white;
+    border-radius: 6px !important;
+    padding: 10px 20px;
+    transition: all 0.4s;
+    &:hover {
+      background-color: #9ae3e2;
+      border-color: #9ae3e2;
+    }
+    &:active {
+      background-color: #1f7877;
+      border-color: #1f7877;
+    }
+  }
+
+  .short_link_box {
+    display: flex;
+    align-items: center;
+    .short_link {
+      color: #2cd5d5;
+      transition: all 0.4s;
+      text-decoration: none;
+      margin-right: 10px;
+      &:hover {
+        color: #9ae3e2;
+      }
+    }
+  }
+
+  .is_copied {
+    background-color: #3a2f60;
+    border-color: #3a2f60;
+    &:hover {
+      background-color: #3a2f60;
+      border-color: #3a2f60;
+    }
+  }
+}
