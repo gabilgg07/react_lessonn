@@ -1,4 +1,8 @@
-import { FETCH_USERS } from "../constants/type";
+import {
+  FETCH_USERS_REQUEST,
+  FETCH_USERS_SUCCESS,
+  FETCH_USERS_FAIL,
+} from "../constants/type";
 import API from "../api/api";
 
 // export const fetchUsers = () => {
@@ -8,11 +12,20 @@ import API from "../api/api";
 //     };
 //   };
 
-export const fetchUsers = () => async () => {
-  const { data } = await API.get("/users");
+export const fetchUsers = () => async (dispatch) => {
+  dispatch({ type: FETCH_USERS_REQUEST });
 
-  return {
-    type: FETCH_USERS,
-    payload: data,
-  };
+  try {
+    const { data } = await API.get("/users");
+
+    dispatch({
+      type: FETCH_USERS_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: FETCH_USERS_FAIL,
+      payload: error,
+    });
+  }
 };
