@@ -17,6 +17,9 @@ import {
   EDIT_STUDENT_REQUEST,
   EDIT_STUDENT_SUCCESS,
   EDIT_STUDENT_FAIL,
+  ADD_STUDENT_REQUEST,
+  ADD_STUDENT_SUCCESS,
+  ADD_STUDENT_FAIL,
 } from "../constants/type";
 
 export const coderReduces = (
@@ -97,6 +100,7 @@ export const studentReduces = (
   action
 ) => {
   switch (action.type) {
+    // get students
     case FETCH_STUDENTS_REQUEST:
       return {
         ...state,
@@ -115,6 +119,7 @@ export const studentReduces = (
         error: action.payload,
       };
 
+    // delete student
     case DELETE_STUDENT_REQUEST:
       return {
         ...state,
@@ -144,6 +149,24 @@ export const studentReduces = (
         loading: false,
       };
     case EDIT_STUDENT_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+
+    // add student
+    case ADD_STUDENT_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case ADD_STUDENT_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
+    case ADD_STUDENT_FAIL:
       return {
         ...state,
         loading: false,

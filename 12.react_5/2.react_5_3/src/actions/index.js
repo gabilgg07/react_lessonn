@@ -17,6 +17,9 @@ import {
   EDIT_STUDENT_REQUEST,
   EDIT_STUDENT_SUCCESS,
   EDIT_STUDENT_FAIL,
+  ADD_STUDENT_REQUEST,
+  ADD_STUDENT_SUCCESS,
+  ADD_STUDENT_FAIL,
 } from "../constants/type";
 import API from "../api/api";
 import typicodeApi from "../api/typicodeApi";
@@ -130,6 +133,25 @@ export const editStudent = (data) => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: EDIT_STUDENT_FAIL,
+      payload: error,
+    });
+  }
+};
+
+export const addStudent = (data) => async (dispatch) => {
+  dispatch({ type: ADD_STUDENT_REQUEST });
+
+  try {
+    await renderApi.post("/students", data);
+
+    dispatch({
+      type: ADD_STUDENT_SUCCESS,
+    });
+
+    dispatch(fetchStudents());
+  } catch (error) {
+    dispatch({
+      type: ADD_STUDENT_FAIL,
       payload: error,
     });
   }
