@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000;
 }
 
 .lds-spinner {
@@ -30,7 +29,6 @@
   width: 6px;
   height: 18px;
   border-radius: 20%;
-  background: #24d3ca;
 }
 .lds-spinner div:nth-child(1) {
   transform: rotate(0deg);

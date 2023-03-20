@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Country = ({ item }) => {
   return (
     <div className="card_county">
-      <Link to={`/countries/${item.name.common}`} className="card_country-link">
+      <Link to={`/countries/${item.cca2}`} className="card_country-link">
         <div className="card_county-wrapper">
           <div
             className="card_county-img-box"

@@ -1,12 +1,7 @@
 header {
   padding: 25px 0;
-  &.dark-header {
-    background-color: $primary-clr;
-    color: white;
-    box-shadow: 0px 5px 8px 2px $shodow-clr;
-    position: relative;
-    z-index: 1;
-  }
+  position: relative;
+  z-index: 1;
 
   h2 {
     &.title {
@@ -16,10 +11,14 @@ header {
   }
 
   .mode {
+    cursor: pointer;
     display: flex;
     align-items: center;
     .icon-box {
       margin-right: 10px;
+      i {
+        transition: all 0.5s;
+      }
     }
   }
 }
