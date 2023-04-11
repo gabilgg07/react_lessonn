@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+.items_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h_100vh {
+  height: 100vh;
+}
+
+.btn_back_home {
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  padding: 8px 10px;
+  border: 1px solid #f43;
+  color: #f43;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  &:hover {
+    background: linear-gradient(to bottom, #ffd700, #c79600);
+    border-color: white;
+    overflow: hidden;
+    color: white;
+  }
+}
