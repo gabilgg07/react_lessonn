@@ -12,7 +12,9 @@ const acntInfoFromLocalStorage = localStorage.getItem("acntInfo")
   : {};
 
 const initialState = {
-  acntInfo: acntInfoFromLocalStorage,
+  acntInfo: {
+    acntInfo: acntInfoFromLocalStorage,
+  },
 };
 
 const store = legacy_createStore(

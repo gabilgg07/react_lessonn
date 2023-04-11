@@ -3,9 +3,10 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { registerAccount } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
+import { isEmpty } from "lodash";
 
 const Register = () => {
-  const [user, setUser] = useState({
+  const [account, setAccount] = useState({
     email: "",
     name: "",
     password: "",
@@ -13,28 +14,30 @@ const Register = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { acntInfo, loading, error } = useSelector((state) => state.acntInfo);
+  const acntInfo = useSelector((state) => state.acntInfo);
 
   useEffect(() => {
-    if (acntInfo) {
+    if (!isEmpty(acntInfo.acntInfo)) {
       navigate("/");
     }
   }, [acntInfo, navigate]);
 
   const handleChangeInp = (e, field) => {
-    setUser({ ...user, [field]: e.target.value });
+    setAccount({ ...account, [field]: e.target.value });
   };
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    dispatch(registerAccount(user));
+    dispatch(registerAccount(account));
 
-    setUser({
-      email: "",
-      name: "",
-      password: "",
-    });
+    if (acntInfo.error === "") {
+      setAccount({
+        email: "",
+        name: "",
+        password: "",
+      });
+    }
   };
   return (
     <div className="items_center h_100vh">
@@ -46,11 +49,13 @@ const Register = () => {
               <p>
                 If have an account? <Link to="/login">login</Link>.
               </p>
-              {error && <span className="text-danger">{error}</span>}
+              {acntInfo.error && (
+                <span className="text-danger">{acntInfo.error.message}</span>
+              )}
               <Form onSubmit={handleSubmitForm}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control
-                    value={user.email}
+                    value={account.email}
                     type="email"
                     name="email"
                     placeholder="Enter email"
@@ -59,7 +64,7 @@ const Register = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicUsername">
                   <Form.Control
-                    value={user.name}
+                    value={account.name}
                     type="name"
                     name="name"
                     placeholder="Enter name"
@@ -68,7 +73,7 @@ const Register = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Control
-                    value={user.password}
+                    value={account.password}
                     type="password"
                     name="password"
                     placeholder="Password"
